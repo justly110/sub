@@ -132,14 +132,11 @@ proxy-groups:
     include-all: true
     proxies:
       - 🚀 节点选择    # 默认跟随主控节点（最省心）
-      - 👆 手动选择
-      - DIRECT
 
   - name: 📹 油管视频
     type: select
     proxies:
       - 🚀 节点选择    # 默认跟随主控节点（最省心）
-      - 👆 手动选择    # 遇到卡顿时，手动切到大带宽/低延迟节点
 
   - name: 🔎 谷歌服务
     type: select
