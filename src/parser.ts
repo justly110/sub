@@ -391,7 +391,7 @@ function parseVless(urlStr: string): ProxyNode | null {
       server: node.server,
       port: node.port,
       uuid: node.uuid,
-      udp: true,
+      udp: false,
       tls: node.tls,
       servername: node.sni || node.server,
       alpn: node.alpn,
