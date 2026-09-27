@@ -49,7 +49,6 @@ export interface ProxyNode {
   multiplier?: number;
   isIplc?: boolean;
   pinSHA256?: string;
-  fingerprint?: string;
 }
 
 export interface CachedTemplate {
