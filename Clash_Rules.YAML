@@ -265,10 +265,11 @@ rule-providers:
 # 流量路由 Rules
 # ==================================================
 rules:
-  - AND,((NETWORK,udp),(DST-PORT,443)),REJECT
   # 1. 广告与内网
   - RULE-SET,private,🏠 私有网络
   - RULE-SET,private-ip,🏠 私有网络,no-resolve
+
+  - AND,((NETWORK,udp),(DST-PORT,443)),REJECT
 
   # 2. 强制代理业务 (专属 AI 规则集)
   - RULE-SET,ai-!cn,💬 AI 服务
