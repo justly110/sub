@@ -136,7 +136,7 @@ proxy-groups:
   - name: 🇩🇪 API专用
     type: select
     proxies:
-      - 9929-DE
+      - 🇩🇪 9929-DE
       - 🚀 节点选择
       - DIRECT
 
