@@ -27,13 +27,33 @@ export function toRawLinks(nodes: ProxyNode[]): string {
           if (node.xhttpHost) params.set('host', node.xhttpHost);
           if (node.xhttpMode) params.set('mode', node.xhttpMode);
         }
-        return `vless://${node.uuid}@${node.server}:${node.port}?${params.toString()}#${encodeURIComponent(node.name)}`;
+        
+        // 关键改动：如果 server 是 IPv6 地址（含有冒号且未包裹中括号），自动用 [ ] 包裹
+        const formattedServer = node.server.includes(':') && !node.server.startsWith('[')
+          ? `[${node.server}]`
+          : node.server;
+        
+        return `vless://${node.uuid}@${formattedServer}:${node.port}?${params.toString()}#${encodeURIComponent(node.name)}`;
       }
       if (node.type === 'hysteria2') {
         const params = new URLSearchParams();
+        
+        // 1. 仅当存在 sni 时添加
         if (node.sni) params.set('sni', node.sni);
-        if (node.obfs) { params.set('obfs', node.obfs); if (node.obfsPassword) params.set('obfs-password', node.obfsPassword); }
+        
+        // 2. 补上证书指纹 pinSHA256
+        const pin = (node as any).pinSHA256 || (node as any).fingerprint;
+        if (pin) params.set('pinSHA256', pin);
+      
+        // 3. 混淆相关
+        if (node.obfs) { 
+          params.set('obfs', node.obfs); 
+          if (node.obfsPassword) params.set('obfs-password', node.obfsPassword); 
+        }
+        
+        // 4. 跳过证书校验
         if (node.skipCertVerify) params.set('insecure', '1');
+        
         return `hysteria2://${node.password}@${node.server}:${node.port}?${params.toString()}#${encodeURIComponent(node.name)}`;
       }
       if (node.type === 'vmess') {
