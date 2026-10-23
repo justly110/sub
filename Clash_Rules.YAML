@@ -137,8 +137,6 @@ proxy-groups:
     type: select
     proxies:
       - 🇩🇪 9929-DE
-      - 🚀 节点选择
-      - DIRECT
 
   - name: 💬 AI 服务
     type: select
@@ -281,7 +279,7 @@ rule-providers:
 # 流量路由 Rules
 # ==================================================
 rules:
-  - DOMAIN-SUFFIX,api.lan,🇩🇪 API专用
+  - DOMAIN-SUFFIX,vps.ai,🇩🇪 API专用
   # 1. 广告与内网
   - RULE-SET,private,🏠 私有网络
   - RULE-SET,private-ip,🏠 私有网络,no-resolve
