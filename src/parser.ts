@@ -391,20 +391,23 @@ function parseVless(urlStr: string): ProxyNode | null {
       server: node.server,
       port: node.port,
       uuid: node.uuid,
-      udp: false,
+      udp: true,
       tls: node.tls,
       servername: node.sni || node.server,
       alpn: node.alpn,
       'skip-cert-verify': node.skipCertVerify,
-      'client-fingerprint': node.fingerprint
+      'client-fingerprint': node.fingerprint || 'chrome'
     };
     if (node.ech) {
       cl['ech-opts'] = { enable: true };
     }
     if (node.flow) cl.flow = node.flow; 
     if (node.reality) {
-      cl.reality = true;
-      cl['reality-opts'] = { 'public-key': node.reality.publicKey, 'short-id': node.reality.shortId };
+      cl['reality-opts'] = {
+        'public-key': node.reality.publicKey,
+        'short-id': String(node.reality.shortId || ''),
+        'support-x25519mlkem768': true
+      };
     }
     if (node.network === 'ws') {
       cl.network = 'ws';
@@ -420,6 +423,8 @@ function parseVless(urlStr: string): ProxyNode | null {
     } else if (isGrpc) {
       cl.network = 'grpc';
       cl['grpc-opts'] = { 'grpc-service-name': params.get('serviceName') || '' };
+    } else {
+      cl.network = 'tcp';
     }
     node.clashObj = cl;
 
