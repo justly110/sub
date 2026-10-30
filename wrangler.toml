@@ -10,5 +10,5 @@ binding = "SUB_CACHE"
 id = "71af29f10e474e6980a494e75239c7ce"
 
 [vars]
-# 💥 私密管理密碼（選填）：設定後將保護「已儲存的配置」管理區域，避免他人檢視或竄改
+# 💥 私密管理密码（选填）：设置后将保护“已保存的配置”管理区域，避免他人查看或篡改
 # PAGE_PASSWORD = "your_secret_password"
