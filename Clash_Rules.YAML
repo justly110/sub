@@ -282,12 +282,16 @@ rule-providers:
 # 流量路由 Rules
 # ==================================================
 rules:
+  # 强制 自编域名 vps.ai 走9929-DE代理，在vps上加host 指向127.0.0.1
   - DOMAIN-SUFFIX,vps.ai,🇩🇪 API专用
   # 1. 广告与内网
   - RULE-SET,private,🏠 私有网络
   - RULE-SET,private-ip,🏠 私有网络,no-resolve
 
   - AND,((NETWORK,udp),(DST-PORT,443)),REJECT
+
+  # 强制 8866 走代理
+  - DOMAIN-KEYWORD,8866,💬 AI 服务
 
   # 2. 强制代理业务 (专属 AI 规则集)
   - RULE-SET,ai-!cn,💬 AI 服务
