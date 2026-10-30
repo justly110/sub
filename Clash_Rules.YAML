@@ -135,8 +135,11 @@ proxy-groups:
 
   - name: 🇩🇪 API专用
     type: select
+    filter: "(?i)9929-DE"
+    include-all: true
     proxies:
-      - 🇩🇪 9929-DE
+      - 🚀 节点选择
+      - DIRECT
 
   - name: 💬 AI 服务
     type: select

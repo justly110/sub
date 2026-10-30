@@ -313,14 +313,6 @@ export async function toClashWithTemplate(nodes: ProxyNode[], env?: Env, forceRe
       });
     }
 
-    groups.forEach(group => {
-      if (!Array.isArray(group.proxies)) group.proxies = [];
-      const arr = group.proxies as string[];
-      proxyNames.forEach(name => {
-        if (!arr.includes(name)) arr.push(name);
-      });
-    });
-// ================= 从这里开始复制 =================
     // 1. 动态生成国家分组 (利用 utils.ts 加上的国旗特征)
     const countryGroupsMap = new Map<string, string[]>();
     // 预设好美观的分组名称
