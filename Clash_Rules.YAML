@@ -279,6 +279,14 @@ rule-providers:
     path: ./ruleset/cn-ip.mrs
     interval: 86400
 
+  custom-proxy:
+    type: http
+    behavior: domain
+    format: yaml
+    url: "https://raw.githubusercontent.com/justly110/sub/main/Custom_Proxy.yaml"
+    path: ./ruleset/custom-proxy.yaml
+    interval: 86400
+
 # ==================================================
 # 流量路由 Rules
 # ==================================================
@@ -307,6 +315,9 @@ rules:
 
   # 5. 非中国网站：走代理
   - RULE-SET,geolocation-non-cn,🌐 非中国
+
+  # 自定义强制代理：放在国内规则之前，防止 nodeseek 等被国内规则误判截胡
+  - RULE-SET,custom-proxy,🚀 节点选择
 
   # 6. 中国国内域名与 IP：走直连
   - RULE-SET,cn,🇨🇳 国内服务

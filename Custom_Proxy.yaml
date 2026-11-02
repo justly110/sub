@@ -1,0 +1,40 @@
+# ==================================================
+# 个人自定义强制代理规则集 (Clash Domain 格式)
+# 优先级高于国内规则，避免被 cn.mrs 误拦截直连
+# ==================================================
+payload:
+  # NodeSeek 及关联论坛、图床、质量监控站
+  - '+.111666.best'
+  - '+.nodeseek.com'
+  - '+.nodeseek.org'
+  - '+.nodeimage.com'
+  - '+.nodequality.com'
+
+  # AI / 大模型服务
+  - '+.kilo.ai'
+  - '+.openrouter.ai'
+  - '+.myclaw.ai'
+  - '+.groq.com'
+  - 'api.groq.com'
+  - '+.api-top.com'
+
+  # VPS / 主机 / IP 查询
+  - '+.zgocloud.cc'
+  - '+.zgovps.com'
+  - '+.fuckip.me'
+
+  # 静态资源 / 图片托管
+  - '+.ibb.co'
+
+  # Google 关联及翻译服务
+  - '+.google.com'
+  - '+.gstatic.com'
+  - '+.googleapis.com'
+  - 'translate.googleapis.com'
+
+  # Cloudflare 与 Workers 生态
+  - '+.cloudflare.com'
+  - '+.workers.dev'
+
+  # 流媒体 / 其他
+  - '+.surrit.com'
