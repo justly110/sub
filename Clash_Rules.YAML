@@ -124,15 +124,6 @@ proxy-groups:
     interval: 300
     proxies:
 
-  - name: 🤖 API专用
-    type: select
-    filter: "(?i)-DE"
-    include-all: true
-    proxies:
-      - 🚀 节点选择
-      - 👆 手动选择
-      - DIRECT
-
   - name: 💬 AI 服务
     type: select
     # (?i) 忽略大小写；排除港、HK、Hong Kong
@@ -283,8 +274,6 @@ rule-providers:
 # 流量路由 Rules
 # ==================================================
 rules:
-  # 强制 自编域名 vps.ai 走9929-DE代理，在vps上加host 指向127.0.0.1
-  - DOMAIN-SUFFIX,vps.ai,🤖 API专用
   # 1. 广告与内网
   - RULE-SET,private,🏠 私有网络
   - RULE-SET,private-ip,🏠 私有网络,no-resolve
