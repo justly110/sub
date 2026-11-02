@@ -16,8 +16,9 @@ payload:
   - '+.openrouter.ai'
   - '+.myclaw.ai'
   - '+.groq.com'
-  - 'api.groq.com'
   - '+.api-top.com'
+  - '+.kakouai.com'
+  - '+.apiling.xyz'
 
   # VPS / 主机 / IP 查询
   - '+.zgocloud.cc'
@@ -31,7 +32,6 @@ payload:
   - '+.google.com'
   - '+.gstatic.com'
   - '+.googleapis.com'
-  - 'translate.googleapis.com'
 
   # Cloudflare 与 Workers 生态
   - '+.cloudflare.com'
