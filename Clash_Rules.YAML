@@ -284,7 +284,7 @@ rule-providers:
 # ==================================================
 rules:
   # 强制 自编域名 vps.ai 走9929-DE代理，在vps上加host 指向127.0.0.1
-  - DOMAIN-SUFFIX,vps.ai,🇩🇪 API专用
+  - DOMAIN-SUFFIX,vps.ai,🤖 API专用
   # 1. 广告与内网
   - RULE-SET,private,🏠 私有网络
   - RULE-SET,private-ip,🏠 私有网络,no-resolve
