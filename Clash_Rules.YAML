@@ -124,15 +124,6 @@ proxy-groups:
     interval: 300
     proxies:
 
-  - name: GLOBAL
-    type: select
-    include-all: true
-    proxies:
-      - 🚀 节点选择
-      - ⚡ 自动选择
-      - 👆 手动选择
-      - DIRECT
-
   - name: 🇩🇪 API专用
     type: select
     filter: "(?i)9929-DE"
@@ -192,6 +183,15 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
+      - DIRECT
+
+  - name: 🌎 全局代理
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - ⚡ 自动选择
+      - 👆 手动选择
       - DIRECT
 
 # ==================================================
