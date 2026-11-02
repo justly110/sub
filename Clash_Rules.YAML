@@ -124,12 +124,13 @@ proxy-groups:
     interval: 300
     proxies:
 
-  - name: 🇩🇪 API专用
+  - name: 🤖 API专用
     type: select
-    filter: "(?i)9929-DE"
+    filter: "(?i)-DE"
     include-all: true
     proxies:
       - 🚀 节点选择
+      - 👆 手动选择
       - DIRECT
 
   - name: 💬 AI 服务
@@ -290,8 +291,8 @@ rules:
 
   - AND,((NETWORK,udp),(DST-PORT,443)),REJECT
 
-  # 强制 88866 走AI分组代理
-  - DOMAIN-KEYWORD,88866,💬 AI 服务
+  # 强制 88866 走🚀 节点选择分组
+  - DOMAIN-KEYWORD,88866,🚀 节点选择
 
   # 2. 强制代理业务 (专属 AI 规则集)
   - RULE-SET,ai-!cn,💬 AI 服务
