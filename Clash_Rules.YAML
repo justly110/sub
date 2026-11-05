@@ -186,7 +186,7 @@ proxy-groups:
       - 🚀 节点选择
       - DIRECT
 
-  - name: 🌎 全局代理
+  - name: GLOBAL
     type: select
     include-all: true
     proxies:
