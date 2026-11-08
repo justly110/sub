@@ -19,6 +19,7 @@ payload:
   - '+.api-top.com'
   - '+.kakouai.com'
   - '+.apiling.xyz'
+  - '+.jizhiapi.site'
 
   # VPS / 主机 / IP 查询
   - '+.zgocloud.cc'
@@ -27,11 +28,6 @@ payload:
 
   # 静态资源 / 图片托管
   - '+.ibb.co'
-
-  # Google 关联及翻译服务
-  - '+.google.com'
-  - '+.gstatic.com'
-  - '+.googleapis.com'
 
   # Cloudflare 与 Workers 生态
   - '+.cloudflare.com'
