@@ -293,9 +293,6 @@ rules:
 
   - AND,((NETWORK,udp),(DST-PORT,443)),REJECT
 
-  # 强制 88866 走🚀 节点选择分组
-  - DOMAIN-KEYWORD,88866,🚀 节点选择
-
   # 2. 强制代理业务 (专属 AI 规则集)
   - RULE-SET,ai-!cn,💬 AI 服务
 
