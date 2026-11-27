@@ -3,14 +3,6 @@
 # 优先级高于国内规则，避免被 cn.mrs 误拦截直连
 # ==================================================
 payload:
-  # NodeSeek 及关联论坛、图床、质量监控站
-  - '+.22112211.xyz'
-  - '+.111666.best'
-  - '+.nodeseek.com'
-  - '+.nodeseek.org'
-  - '+.nodeimage.com'
-  - '+.nodequality.com'
-
   # AI / 大模型服务
   - '+.kilo.ai'
   - '+.openrouter.ai'
